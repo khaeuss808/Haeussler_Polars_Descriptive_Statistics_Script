@@ -1,7 +1,6 @@
 # Kayla_Haeussler_MiniProject_2
 
-[![CI](https://github.com/nogibjj/Kayla_Haeussler_MiniProject_2/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/Kayla_Haeussler_MiniProject_2/actions/workflows/hello.yml)
-
+[![CI](https://github.com/khaeuss808/Kayla_Haeussler_MiniProject_3/actions/workflows/hello.yml/badge.svg)](https://github.com/khaeuss808/Kayla_Haeussler_MiniProject_3/actions/workflows/hello.yml)
 
 IDS 706: Mini Project 3
 Polars Descriptive Statistics Script
