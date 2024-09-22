@@ -40,7 +40,7 @@ def create_histogram(df, col_of_intrst):
 
 
 def create_scatter(data, x_col, y_col):
-    plt.scatter(data[y_col].to_list(), data[x_col].to_list())
+    plt.scatter(data[x_col].to_list(), data[y_col].to_list())
     plt.title(x_col + " vs. " + y_col)
     plt.xlabel(x_col)
     plt.ylabel(y_col)
