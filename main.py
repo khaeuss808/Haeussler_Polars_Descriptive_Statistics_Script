@@ -9,6 +9,10 @@ def readcsv(filename):
     return pl.read_csv(filename)
 
 
+def describe_it(dataset):
+    return dataset.describe()
+
+
 def get_summary_stats(dataset, col_of_intrst):
     summ_stats = dataset[col_of_intrst].describe()
 
@@ -48,13 +52,28 @@ def create_scatter(data, x_col, y_col):
 
 
 def save_to_md(data):  # for autogenerating report
-    test = get_summary_stats(data).to_pandas()
+    # Select a subset of columns to keep the markdown readable
+    subset_cols = ["Hours_Studied", "Attendance", "Sleep_Hours", "Exam_Score"]
+    test = (
+        describe_it(data).select(subset_cols).to_pandas()
+    )  # Convert to pandas for markdown
+
+    # Convert the table to markdown
     mkdown = test.to_markdown(index=False)
-    with open("nbastats2.md", "a", encoding="utf-8") as file:
+
+    # Get summary statistics for "Exam_Score"
+    test2 = get_summary_stats(data, "Exam_Score")
+
+    # Convert summary statistics to pandas DataFrame and then to markdown
+    summary_stats_df = test2.to_pandas()  # Convert summary stats to pandas DataFrame
+    mkdown2 = summary_stats_df.to_markdown(index=False)
+
+    # Save markdown output to a file
+    with open("Student_Summary_Report.md", "a", encoding="utf-8") as file:
         file.write("Describe:\n")
-        file.write(mkdown)
+        file.write(mkdown + "\n\n")  # Write description of selected columns
         file.write("Summarize:\n")
-        file.write(mkdown2)
+        file.write(mkdown2)  # Write summary of Exam_Score
 
 
 if __name__ == "__main__":
