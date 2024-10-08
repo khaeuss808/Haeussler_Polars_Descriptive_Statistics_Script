@@ -47,6 +47,16 @@ def create_scatter(data, x_col, y_col):
     plt.show()
 
 
+def save_to_md(data):  # for autogenerating report
+    test = get_summary_stats(data).to_pandas()
+    mkdown = test.to_markdown(index=False)
+    with open("nbastats2.md", "a", encoding="utf-8") as file:
+        file.write("Describe:\n")
+        file.write(mkdown)
+        file.write("Summarize:\n")
+        file.write(mkdown2)
+
+
 if __name__ == "__main__":
     # read the csv
     student_data = readcsv("StudentPerformanceFactors.csv")
@@ -54,6 +64,9 @@ if __name__ == "__main__":
     # get summary stats: mean, median, sd
     summary_stats = get_summary_stats(student_data, "Exam_Score")
     print(summary_stats)
+
+    # autogenerate markdown
+    save_to_md(student_data)
 
     # create visualizations
     create_histogram(student_data, "Exam_Score")
