@@ -71,7 +71,7 @@ def save_to_md(data):  # for autogenerating report
     with open("Student_Summary_Report.md", "a", encoding="utf-8") as file:
         file.write("Describe:\n")
         file.write(mkdown + "\n\n")  # Write description of selected columns
-        file.write("Summarize:\n")
+        file.write("Summarize Student Final Exam Scores:\n")
         file.write(mkdown2)  # Write summary of Exam_Score
 
 
