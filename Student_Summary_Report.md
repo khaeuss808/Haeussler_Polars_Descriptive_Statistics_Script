@@ -11,7 +11,7 @@ Describe:
 | 75%         |        24       |      90      |       8       |     69       |
 | max         |        44       |     100      |      10       |    101       |
 
-Summarize:
+Summarize Student Final Exam Scores:
 | statistic   |      value |
 |:------------|-----------:|
 | count       | 6607       |
