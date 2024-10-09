@@ -54,9 +54,8 @@ def create_scatter(data, x_col, y_col):
 def save_to_md(data):  # for autogenerating report
     # Select a subset of columns to keep the markdown readable
     subset_cols = ["Hours_Studied", "Attendance", "Sleep_Hours", "Exam_Score"]
-    test = (
-        describe_it(data).select(subset_cols).to_pandas()
-    )  # Convert to pandas for markdown
+    data_subset = data.select(subset_cols)
+    test = describe_it(data_subset).to_pandas()  # Convert to pandas for markdown
 
     # Convert the table to markdown
     mkdown = test.to_markdown(index=False)
