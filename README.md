@@ -1,4 +1,4 @@
-# Kayla_Haeussler_MiniProject_2
+# Kayla_Haeussler_MiniProject_3
 
 [![CI](https://github.com/khaeuss808/Kayla_Haeussler_MiniProject_3/actions/workflows/hello.yml/badge.svg)](https://github.com/khaeuss808/Kayla_Haeussler_MiniProject_3/actions/workflows/hello.yml)
 
